@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abhimanyu Prajapati · Platform & DevOps Engineer</title>
+<meta name="description" content="Lead DevOps / Platform Engineer with 7 years building cloud-native and AI/ML infrastructure on Kubernetes, AWS and GCP. Open to relocation.">
+<meta property="og:title" content="Abhimanyu Prajapati · Platform & DevOps Engineer">
+<meta property="og:description" content="Kubernetes, MLOps and cloud cost optimisation. 7 years across AWS, GCP and on-prem GPU clusters. Open to relocation.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0a0d14">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0d14'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='30' fill='%2367e8f9'%3EAP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0d14; --card:rgba(255,255,255,.035); --card-hi:rgba(255,255,255,.06);
+  --line:rgba(255,255,255,.08); --line-hi:rgba(255,255,255,.16);
+  --ink:#f4f6fb; --body:#b7bfce; --mute:#7c8597;
+  --a1:#6d8bff; --a2:#22d3ee; --ok:#4ade80; --warn:#fbbf24; --bad:#f87171;
+  --grad:linear-gradient(120deg,var(--a1),var(--a2));
+  --grid:rgba(255,255,255,.035); --spot:rgba(34,211,238,.10);
+}
+@media (prefers-color-scheme:light){
+  :root{
+    --bg:#f6f7fb; --card:rgba(255,255,255,.78); --card-hi:#fff;
+    --line:rgba(15,23,42,.09); --line-hi:rgba(15,23,42,.18);
+    --ink:#0b1220; --body:#3b4558; --mute:#6b7487;
+    --a1:#3b5bdb; --a2:#0891b2; --ok:#15803d; --warn:#b45309; --bad:#dc2626;
+    --grid:rgba(15,23,42,.045); --spot:rgba(8,145,178,.09);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--body);font:16px/1.65 Inter,-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:44px 44px;mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 40%,transparent 100%)}
+.glows{position:absolute;top:0;left:0;right:0;height:1000px;overflow:hidden;z-index:-1;pointer-events:none}
+.glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.35}
+.g1{width:520px;height:520px;background:var(--a1);top:-160px;left:-120px}
+.g2{width:460px;height:460px;background:var(--a2);top:40px;right:-160px;opacity:.22}
+a{color:var(--a2);text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+#progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--grad);z-index:50;box-shadow:0 0 12px var(--a2)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 72%,transparent);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:700;letter-spacing:-.01em}
+.logo i{display:grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--grad);color:#0a0d14;font:700 13px "JetBrains Mono",monospace;font-style:normal}
+.nav-links{display:flex;gap:24px;font-size:14px}
+.nav-links a{color:var(--mute);transition:color .2s}.nav-links a:hover{color:var(--ink)}
+.nav-r{display:flex;gap:10px;align-items:center}
+.kbd{display:inline-flex;align-items:center;gap:6px;font:500 12px "JetBrains Mono",monospace;color:var(--mute);border:1px solid var(--line-hi);padding:6px 10px;border-radius:8px;background:var(--card);cursor:pointer}
+.kbd:hover{color:var(--ink);border-color:var(--a2)}
+.nav-cta{font-size:14px;font-weight:600;color:var(--ink);border:1px solid var(--line-hi);padding:7px 14px;border-radius:9px;transition:.2s}
+.nav-cta:hover{border-color:var(--a2);color:var(--a2)}
+
+/* hero */
+.hero-wrap{position:relative}
+#net{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.9}
+.hero{position:relative;padding:92px 0 80px;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:9px;font:500 13px "JetBrains Mono",monospace;color:var(--ok);
+  border:1px solid color-mix(in srgb,var(--ok) 35%,transparent);background:color-mix(in srgb,var(--ok) 9%,transparent);padding:6px 13px;border-radius:99px}
+.status b{width:8px;height:8px;border-radius:50%;background:var(--ok);animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 70%,transparent)}80%,100%{box-shadow:0 0 0 9px transparent}}
+h1{text-wrap:balance;font-size:clamp(38px,5.4vw,64px);line-height:1.04;letter-spacing:-.035em;color:var(--ink);margin:22px 0 20px;font-weight:800}
+.lede{font-size:clamp(17px,1.6vw,19px);max-width:560px;margin:0}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 18px;border-radius:11px;font-weight:600;font-size:15px;border:1px solid var(--line-hi);color:var(--ink);background:var(--card);transition:.2s;cursor:pointer;font-family:inherit}
+.btn:hover{border-color:var(--a2);transform:translateY(-1px)}
+.btn.primary{background:var(--grad);border:0;color:#0a0d14;box-shadow:0 8px 30px -8px color-mix(in srgb,var(--a1) 70%,transparent)}
+.btn svg{width:18px;height:18px}
+.meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:28px;font:13px "JetBrains Mono",monospace;color:var(--mute)}
+.meta span::before{content:"▸ ";color:var(--a2)}
+
+/* terminal */
+.term{border-radius:16px;background:#0b0f18;border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 80px -20px rgba(0,0,0,.6),0 0 60px -20px var(--a1);overflow:hidden;cursor:text}
+.term-bar{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.07);background:#0e1320}
+.term-bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.term-bar i:nth-child(2){background:#febc2e}.term-bar i:nth-child(3){background:#28c840}
+.term-bar span{margin-left:10px;font:12px "JetBrains Mono",monospace;color:#7c8597}
+.term-bar em{margin-left:auto;font:11px "JetBrains Mono",monospace;color:#4ade80;font-style:normal;opacity:.8}
+.term-body{height:400px;overflow-y:auto;padding:18px 22px 20px;font:13.5px/1.7 "JetBrains Mono",monospace;color:#c9d1e3;scrollbar-width:thin;scrollbar-color:#2a3242 transparent}
+.term-body pre{margin:0;font:inherit;white-space:pre-wrap;word-break:break-word}
+.term-in{display:flex;align-items:center;gap:8px}
+.term-in input{flex:1;background:none;border:0;outline:0;color:#f4f6fb;font:inherit;caret-color:#67e8f9;padding:0;min-width:0}
+.t-p{color:#4ade80}.t-c{color:#f4f6fb}.t-k{color:#7aa2ff}.t-v{color:#e5e9f3}.t-g{color:#4ade80}.t-y{color:#fbbf24}.t-m{color:#67e8f9}.t-d{color:#7c8597}.t-r{color:#f87171}
+.term-body a{color:#67e8f9;text-decoration:underline}
+.cursor{display:inline-block;width:8px;height:16px;background:#67e8f9;vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hint{color:#7c8597}
+
+/* marquee */
+.marquee{border-block:1px solid var(--line);overflow:hidden;padding:16px 0;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee-track{display:flex;gap:44px;width:max-content;animation:scroll 38s linear infinite;font:500 14px "JetBrains Mono",monospace;color:var(--mute)}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span::before{content:"◆ ";color:var(--a2);font-size:10px;vertical-align:2px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:84px 0;position:relative}
+.eyebrow{font:500 13px "JetBrains Mono",monospace;color:var(--a2);letter-spacing:.04em}
+h2{font-size:clamp(28px,3.4vw,40px);letter-spacing:-.03em;color:var(--ink);margin:10px 0 40px;font-weight:800;line-height:1.1}
+
+/* spotlight cards */
+.spot{position:relative;isolation:isolate}
+.spot::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;opacity:0;transition:opacity .3s;
+  background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%),var(--spot),transparent 60%)}
+.spot:hover::before{opacity:1}
+.spot::after{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;opacity:0;transition:opacity .3s;pointer-events:none;
+  background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),var(--a2),transparent 60%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.spot:hover::after{opacity:.9}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{padding:26px 24px;border-radius:16px;background:var(--card);border:1px solid var(--line);transition:transform .25s}
+.stat:hover{transform:translateY(-3px)}
+.stat .n{font-size:46px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--ink)}
+.stat .n small{font-size:26px;color:var(--a2);margin-left:2px}
+.stat p{margin:12px 0 0;font-size:14.5px}
+
+/* demo */
+.demo{border-radius:20px;border:1px solid var(--line);background:var(--card);padding:26px;display:grid;grid-template-columns:1fr 300px;gap:26px}
+.demo-top{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;align-items:center}
+.demo-top .btn{padding:9px 14px;font-size:14px}
+.btn.spike{background:var(--grad);border:0;color:#0a0d14}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.gauge{flex:1;min-width:160px;height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.gauge i{display:block;height:100%;width:8%;background:linear-gradient(90deg,var(--ok),var(--warn),var(--bad));transition:width .4s}
+.nodes{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;min-height:150px;align-items:start}
+.node{border:1px dashed var(--line-hi);border-radius:12px;padding:10px;background:color-mix(in srgb,var(--bg) 60%,transparent);animation:pop .4s ease}
+.node.prov{border-color:var(--warn)}
+.node.bye{animation:out .5s ease forwards}
+.node h4{margin:0 0 8px;font:600 11.5px "JetBrains Mono",monospace;color:var(--mute);display:flex;justify-content:space-between}
+.node h4 b{color:var(--a2);font-weight:600}.node.prov h4 b{color:var(--warn)}
+.pods{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.pod{aspect-ratio:1;border-radius:6px;background:color-mix(in srgb,var(--line) 70%,transparent)}
+.pod{transition:background .3s,box-shadow .3s}
+.pod.on{background:var(--grad);box-shadow:0 0 12px -2px var(--a2)}
+.pod.pend{background:var(--warn);opacity:.55;animation:pulse 1s infinite}
+@keyframes pop{from{transform:scale(.6);opacity:0}}
+@keyframes out{to{transform:scale(.85);opacity:0}}
+@keyframes pulse{50%{opacity:.25}}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.kpi{border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.kpi span{display:block;font:11px "JetBrains Mono",monospace;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+.kpi b{font-size:22px;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.kpi small{font-size:12px;color:var(--warn);font-weight:600}
+.events{font:12px/1.6 "JetBrains Mono",monospace;height:190px;overflow:hidden;border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column}
+.events div{animation:pop .3s ease;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.events .w{color:var(--warn)}.events .n{color:var(--ok)}.events .i{color:var(--a2)}
+.demo-note{margin:14px 0 0;font-size:13.5px;color:var(--mute)}
+
+/* build cards */
+.build{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{padding:30px 28px;border-radius:18px;background:var(--card);border:1px solid var(--line);transition:transform .25s}
+.card:hover{transform:translateY(-4px)}
+.card .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--a1) 16%,transparent);color:var(--a2);margin-bottom:20px}
+.card .ic svg{width:24px;height:24px}
+.card h3{color:var(--ink);font-size:19px;margin:0 0 10px;letter-spacing:-.015em}
+.card p{margin:0 0 18px;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font:500 12.5px "JetBrains Mono",monospace;padding:4px 10px;border-radius:7px;color:var(--ink);background:var(--card-hi);border:1px solid var(--line)}
+
+/* timeline */
+.tl{position:relative;margin-left:8px}
+.tl::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:2px;background:var(--line)}
+.tl::after{content:"";position:absolute;left:0;top:8px;width:2px;height:var(--fill,0%);max-height:calc(100% - 16px);background:linear-gradient(var(--a1),var(--a2));box-shadow:0 0 10px var(--a2)}
+.item{position:relative;padding:0 0 46px 40px;display:grid;grid-template-columns:200px 1fr;gap:28px}
+.item:last-child{padding-bottom:0}
+.item::before{content:"";position:absolute;left:-6px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--a2);box-shadow:0 0 0 4px color-mix(in srgb,var(--a2) 15%,transparent),0 0 18px var(--a2);z-index:1}
+.item.now::before{background:var(--a2)}
+.when{font:500 13px "JetBrains Mono",monospace;color:var(--mute);padding-top:2px}
+.when b{display:block;color:var(--ink);font:700 17px Inter,sans-serif;letter-spacing:-.01em;margin-bottom:2px}
+.role{color:var(--ink);font-weight:700;font-size:18px;letter-spacing:-.01em}
+.item ul{margin:10px 0 0;padding:0;list-style:none}
+.item li{position:relative;padding-left:20px;margin:8px 0;font-size:15.5px}
+.item li::before{content:"›";position:absolute;left:2px;color:var(--a2);font-weight:700}
+.item li b{color:var(--ink);font-weight:600}
+.badge{display:inline-block;font:600 11px "JetBrains Mono",monospace;color:var(--ok);border:1px solid color-mix(in srgb,var(--ok) 40%,transparent);padding:1px 7px;border-radius:6px;margin-left:8px;vertical-align:3px}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sk{padding:22px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.sk h3{margin:0 0 14px;font:600 13px "JetBrains Mono",monospace;color:var(--mute);letter-spacing:.06em;text-transform:uppercase}
+
+/* contact */
+.contact{text-align:center;padding:72px 32px;border-radius:24px;border:1px solid var(--line);
+  background:radial-gradient(ellipse at top,color-mix(in srgb,var(--a1) 22%,transparent),transparent 65%),var(--card)}
+.contact h2{margin:12px auto 14px;max-width:700px}
+.contact p{max-width:560px;margin:0 auto}
+.contact .cta{justify-content:center}
+footer{padding:40px 0 56px;color:var(--mute);font:13px "JetBrains Mono",monospace;text-align:center}
+footer kbd{font:inherit;border:1px solid var(--line-hi);border-radius:5px;padding:0 5px}
+
+/* command palette */
+#pal{position:fixed;inset:0;z-index:100;display:none;place-items:start center;padding-top:14vh;background:rgba(5,8,14,.55);backdrop-filter:blur(6px)}
+#pal.open{display:grid}
+.pal-box{width:min(560px,92vw);border-radius:16px;background:var(--bg);border:1px solid var(--line-hi);box-shadow:0 30px 80px rgba(0,0,0,.5);overflow:hidden;animation:pop .18s ease}
+.pal-box input{width:100%;border:0;border-bottom:1px solid var(--line);background:none;color:var(--ink);font:16px Inter,sans-serif;padding:16px 18px;outline:0}
+.pal-list{max-height:340px;overflow:auto;padding:6px}
+.pal-item{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:9px;cursor:pointer;color:var(--body);font-size:15px}
+.pal-item span{font:12px "JetBrains Mono",monospace;color:var(--mute)}
+.pal-item.sel{background:var(--card-hi);color:var(--ink)}
+#toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);opacity:0;transition:.3s;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:600;font-size:14px;z-index:120;pointer-events:none}
+#toast.show{opacity:1;transform:translateX(-50%)}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:110}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr;padding-top:64px;gap:44px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .build,.skills{grid-template-columns:1fr}
+  .item{grid-template-columns:1fr;gap:6px}
+  .demo{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+@media (max-width:640px){
+  .wrap{padding:0 18px}
+  .kbd{display:none}
+  .stats{gap:12px}.stat{padding:20px 16px}.stat .n{font-size:36px}
+  .term-body{font-size:12px;height:340px;padding:14px}
+  section{padding:64px 0}
+  .demo{padding:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div class="glows"><div class="glow g1"></div><div class="glow g2"></div></div>
+
+<nav><div class="wrap">
+  <a class="logo" href="#top"><i>AP</i>Abhimanyu Prajapati</a>
+  <div class="nav-links"><a href="#impact">Impact</a><a href="#demo">Live demo</a><a href="#build">What I build</a><a href="#experience">Experience</a><a href="#skills">Stack</a></div>
+  <div class="nav-r"><button class="kbd" id="palBtn" aria-label="Open command palette">⌘K</button><a class="nav-cta" href="#contact">Get in touch</a></div>
+</div></nav>
+
+<div class="hero-wrap">
+<canvas id="net" aria-hidden="true"></canvas>
+<main class="wrap" id="top">
+<header class="hero">
+  <div>
+    <span class="status"><b></b>open to relocation</span>
+    <h1>I build the platforms <span class="grad">engineers ship on.</span></h1>
+    <p class="lede">Lead DevOps &amp; Platform Engineer with 7 years running Kubernetes, MLOps and GPU infrastructure
+      across AWS, GCP and on-prem. I make deploys boring, clusters reliable and the cloud bill smaller.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:abhimanyuprajapati96@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/abhimanyu-prajapati96/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zM9.5 9.75h3.8v1.5h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4z"/></svg>LinkedIn</a>
+    </div>
+    <div class="meta"><span>Bengaluru, India</span><span>UK · EU · NA · APAC · ME</span></div>
+  </div>
+
+  <div class="term" id="term" aria-label="Interactive terminal. Type help for commands.">
+    <div class="term-bar"><i></i><i></i><i></i><span>~/career — zsh</span><em>● interactive</em></div>
+    <div class="term-body" id="termBody"><pre id="termOut"></pre>
+      <div class="term-in" id="termIn" hidden><span><span class="t-p">➜</span> <span class="t-m">~</span></span>
+        <input id="termInput" aria-label="Terminal input" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+    </div>
+  </div>
+</header>
+</main>
+</div>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+<main class="wrap">
+<section id="impact" class="reveal">
+  <div class="eyebrow">// impact</div>
+  <h2 data-scramble>Results, not just uptime.</h2>
+  <div class="stats">
+    <div class="stat spot"><div class="n"><span data-count="40">0</span><small>%</small></div><p>lower GPU spend by moving ML training to an on-prem RKE2 cluster</p></div>
+    <div class="stat spot"><div class="n"><span data-count="30">0</span><small>%</small></div><p>EKS cost cut with Karpenter + KEDA autoscaling</p></div>
+    <div class="stat spot"><div class="n"><span data-count="50">0</span><small>%</small></div><p>faster multi-cluster deployments, automated end to end</p></div>
+    <div class="stat spot"><div class="n"><span data-count="70">0</span><small>%</small></div><p>fewer access tickets after rolling out Okta SSO for AWS</p></div>
+  </div>
+</section>
+
+<section id="demo" class="reveal">
+  <div class="eyebrow">// live demo: what I do all day, in 10 seconds</div>
+  <h2 data-scramble>Hit it with traffic. Watch it scale.</h2>
+  <div class="demo spot">
+    <div>
+      <div class="demo-top">
+        <button class="btn spike" id="spike">⚡ Traffic spike</button>
+        <button class="btn" id="calm" disabled>↓ Traffic drops</button>
+        <div class="gauge" title="load"><i id="gauge"></i></div>
+      </div>
+      <div class="nodes" id="nodes"></div>
+      <p class="demo-note">Pods scale with load (KEDA). When nodes fill up, a right-sized node is added (Karpenter);
+        when traffic drops, nodes are consolidated so you stop paying for idle capacity.</p>
+    </div>
+    <div>
+      <div class="kpis">
+        <div class="kpi"><span>req/s</span><b id="kRps">120</b></div>
+        <div class="kpi"><span>pods</span><b id="kPods">2</b></div>
+        <div class="kpi"><span>nodes</span><b id="kNodes">1</b></div>
+        <div class="kpi"><span>$ / hour</span><b id="kCost">0.19</b></div>
+      </div>
+      <div class="events" id="events" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section id="build" class="reveal">
+  <div class="eyebrow">// what I build</div>
+  <h2 data-scramble>Three things I'm hired for.</h2>
+  <div class="build">
+    <div class="card spot">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="m3 7 9 5 9-5M12 12v10"/></svg></div>
+      <h3>Kubernetes platforms</h3>
+      <p>Internal developer platforms and self-service deployment, GitOps, service mesh and multi-cluster operations that teams actually enjoy using.</p>
+      <div class="chips"><span class="chip">EKS</span><span class="chip">Argo CD</span><span class="chip">Istio</span><span class="chip">Helm</span><span class="chip">Terraform</span></div>
+    </div>
+    <div class="card spot">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></div>
+      <h3>MLOps &amp; GPU infrastructure</h3>
+      <p>On-prem and cloud GPU clusters, ML pipelines and training platforms, from bare-metal RKE2 to SageMaker and Kubeflow.</p>
+      <div class="chips"><span class="chip">Kubeflow</span><span class="chip">Ray</span><span class="chip">SageMaker</span><span class="chip">MLflow</span><span class="chip">NVIDIA</span></div>
+    </div>
+    <div class="card spot">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/></svg></div>
+      <h3>Cloud cost &amp; FinOps</h3>
+      <p>Autoscaling, right-sizing and cost visibility, including a central view of AI tool and model spend across Cursor, Claude, SageMaker and Bedrock.</p>
+      <div class="chips"><span class="chip">Karpenter</span><span class="chip">KEDA</span><span class="chip">Cost visibility</span><span class="chip">AIOps</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="reveal">
+  <div class="eyebrow">// experience</div>
+  <h2 data-scramble>7 years, five teams.</h2>
+  <div class="tl" id="tl">
+    <div class="item now">
+      <div class="when"><b>AiDash</b>Nov 2025 – now</div>
+      <div><div class="role">Lead Software Engineer, Platform<span class="badge">current</span></div><ul>
+        <li><b>AI/ML platform infrastructure</b> for running AI workloads at scale with efficient GPU use.</li>
+        <li><b>AI cost &amp; usage visibility</b> across Cursor, Claude, SageMaker and Bedrock, so teams can see and cut spend.</li>
+        <li><b>Self-service deployment platform</b> for frontend and backend services through one standard workflow.</li>
+        <li><b>Kubeflow on Kubernetes</b> for ML pipelines and training.</li></ul></div>
+    </div>
+    <div class="item">
+      <div class="when"><b>Sanas.ai</b>Mar 2025 – Nov 2025</div>
+      <div><div class="role">Senior Platform Engineer</div><ul>
+        <li><b>Highly available on-prem RKE2 cluster</b> with custom CNI and NVIDIA GPU support.</li>
+        <li><b>40% lower GPU cost</b> by moving ML training from cloud to on-prem.</li>
+        <li><b>Ray + Dagster</b> for scalable training and ETL orchestration.</li>
+        <li><b>Per-PR preview environments</b> with Istio cookie-based routing.</li></ul></div>
+    </div>
+    <div class="item">
+      <div class="when"><b>Zoomcar</b>Nov 2023 – Feb 2025</div>
+      <div><div class="role">Senior DevOps Engineer</div><ul>
+        <li><b>AWS → GCP migration</b> of production with minimal downtime.</li>
+        <li><b>EKS 1.21 → 1.28</b>, removing extended-support fees.</li>
+        <li><b>Istio</b> blue-green releases and gradual traffic shifting.</li>
+        <li><b>SigNoz</b> observability, cutting New Relic spend.</li></ul></div>
+    </div>
+    <div class="item">
+      <div class="when"><b>Observe.ai</b>Jan 2022 – Nov 2023</div>
+      <div><div class="role">Senior DevOps Engineer</div><ul>
+        <li><b>50% faster deployments</b> by automating the multi-cluster lifecycle with Harness.</li>
+        <li><b>SOC 2, PCI-DSS and ISO</b> compliance; 60% fewer vulnerabilities.</li>
+        <li><b>Okta SSO for AWS</b>: 70% fewer support tickets.</li>
+        <li><b>Karpenter + KEDA</b> for a 30% cost reduction; automated SageMaker pipelines.</li></ul></div>
+    </div>
+    <div class="item">
+      <div class="when"><b>TO THE NEW</b>Feb 2019 – Jul 2021</div>
+      <div><div class="role">DevOps Engineer</div><ul>
+        <li><b>Chef</b> infrastructure and configuration automation.</li>
+        <li><b>Cross-region migration</b> and disaster recovery.</li>
+        <li><b>Logging &amp; monitoring stack</b>, plus cost management that reduced spend.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <div class="eyebrow">// stack</div>
+  <h2 data-scramble>Tools I reach for.</h2>
+  <div class="skills">
+    <div class="sk spot"><h3>Orchestration</h3><div class="chips"><span class="chip">Kubernetes</span><span class="chip">EKS</span><span class="chip">ECS</span><span class="chip">RKE2</span><span class="chip">Helm</span><span class="chip">Karpenter</span><span class="chip">KEDA</span></div></div>
+    <div class="sk spot"><h3>Cloud &amp; IaC</h3><div class="chips"><span class="chip">AWS</span><span class="chip">GCP</span><span class="chip">Azure</span><span class="chip">Terraform</span><span class="chip">Ansible</span><span class="chip">Chef</span></div></div>
+    <div class="sk spot"><h3>Delivery</h3><div class="chips"><span class="chip">Argo CD</span><span class="chip">GitOps</span><span class="chip">GitLab CI</span><span class="chip">Jenkins</span><span class="chip">Harness</span><span class="chip">Istio</span></div></div>
+    <div class="sk spot"><h3>ML / AI</h3><div class="chips"><span class="chip">Kubeflow</span><span class="chip">MLflow</span><span class="chip">SageMaker</span><span class="chip">Ray</span><span class="chip">Airflow</span><span class="chip">Dagster</span></div></div>
+    <div class="sk spot"><h3>Observability</h3><div class="chips"><span class="chip">Prometheus</span><span class="chip">Grafana</span><span class="chip">SigNoz</span><span class="chip">New Relic</span><span class="chip">CloudWatch</span><span class="chip">ELK</span></div></div>
+    <div class="sk spot"><h3>Code &amp; data</h3><div class="chips"><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">DynamoDB</span><span class="chip">Elasticsearch</span></div></div>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <div class="contact spot">
+    <div class="eyebrow">// kubectl apply -f you.yaml</div>
+    <h2>Building a platform team abroad? <span class="grad">Let's talk.</span></h2>
+    <p>Open to Senior, Staff and Lead roles in platform, DevOps, SRE, MLOps and FinOps, in the UK, Europe, North America, APAC and the Middle East.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:abhimanyuprajapati96@gmail.com">abhimanyuprajapati96@gmail.com</a>
+      <button class="btn" id="copyEmail">Copy email</button>
+      <a class="btn" href="https://www.linkedin.com/in/abhimanyu-prajapati96/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>B.Tech Computer Science (Cloud Computing &amp; Virtualization), UPES Dehradun · © <span id="yr"></span> Abhimanyu Prajapati<br>
+  <span style="opacity:.7">psst: press <kbd>⌘K</kbd>, or type <kbd>sudo hire-me</kbd> in the terminal</span></footer>
+
+<div id="pal" role="dialog" aria-modal="true" aria-label="Command palette"><div class="pal-box">
+  <input id="palIn" placeholder="Jump to… or type a command" autocomplete="off"><div class="pal-list" id="palList"></div></div></div>
+<div id="toast" role="status"></div>
+<canvas id="confetti"></canvas>
+
+<script>
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const EMAIL = "abhimanyuprajapati96@gmail.com", LINKEDIN = "https://www.linkedin.com/in/abhimanyu-prajapati96/";
+$("#yr").textContent = new Date().getFullYear();
+
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("show"),2200); }
+async function copyEmail(){ try{ await navigator.clipboard.writeText(EMAIL); toast("Email copied ✓"); }catch{ toast(EMAIL); } }
+$("#copyEmail").onclick = copyEmail;
+
+/* ---------- scroll progress + timeline fill ---------- */
+const tl = $("#tl");
+function onScroll(){
+  const h = document.documentElement; $("#progress").style.width = (h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";
+  const r = tl.getBoundingClientRect(), p = Math.min(1, Math.max(0, (innerHeight*0.6 - r.top)/r.height));
+  tl.style.setProperty("--fill", (p*100)+"%");
+}
+addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+/* ---------- pod-network background ---------- */
+(() => {
+  const c = $("#net"), ctx = c.getContext("2d"); let W, H, pts = [], mouse = {x:-1e4,y:-1e4}, run = true;
+  const dpr = Math.min(2, devicePixelRatio||1);
+  const accent = getComputedStyle(document.documentElement).getPropertyValue("--a2").trim() || "#22d3ee";
+  function size(){ const r = c.getBoundingClientRect(); W=r.width; H=r.height; c.width=W*dpr; c.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    const n = Math.round(Math.min(70, W*H/16000)); pts = Array.from({length:n}, () => ({x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-.5)*.35, vy:(Math.random()-.5)*.35, r:Math.random()*1.6+1})); }
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    for (const p of pts){
+      if (!reduce){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1;
+        const dx=p.x-mouse.x, dy=p.y-mouse.y, d=Math.hypot(dx,dy); if(d<120&&d>0){ p.x+=dx/d*1.2; p.y+=dy/d*1.2; } }
+    }
+    ctx.strokeStyle=accent; ctx.lineWidth=1;
+    for (let i=0;i<pts.length;i++) for (let j=i+1;j<pts.length;j++){
+      const a=pts[i], b=pts[j], d=Math.hypot(a.x-b.x,a.y-b.y);
+      if (d<130){ ctx.globalAlpha=(1-d/130)*.35; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); }
+    }
+    ctx.globalAlpha=.8; ctx.fillStyle=accent; for (const p of pts){ ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,7); ctx.fill(); }
+    ctx.globalAlpha=1; if (run && !reduce) requestAnimationFrame(frame);
+  }
+  size(); addEventListener("resize", () => { size(); if (reduce) frame(); });
+  c.parentElement.addEventListener("pointermove", e => { const r=c.getBoundingClientRect(); mouse={x:e.clientX-r.left,y:e.clientY-r.top}; });
+  c.parentElement.addEventListener("pointerleave", () => mouse={x:-1e4,y:-1e4});
+  new IntersectionObserver(([e]) => { const was=run; run=e.isIntersecting; if(run&&!was&&!reduce) requestAnimationFrame(frame); }).observe(c);
+  frame();
+})();
+
+/* ---------- marquee ---------- */
+(() => { const tools = ["Kubernetes","EKS","Terraform","Argo CD","Istio","Helm","Karpenter","KEDA","Kubeflow","Ray","SageMaker","MLflow","Prometheus","Grafana","SigNoz","GitLab CI","Harness","AWS","GCP","Azure","RKE2","NVIDIA GPUs","Python","Okta SSO"];
+  const html = tools.map(t=>`<span>${t}</span>`).join(""); $("#marquee").innerHTML = html + html; })();
+
+/* ---------- spotlight cards ---------- */
+$$(".spot").forEach(el => el.addEventListener("pointermove", e => { const r=el.getBoundingClientRect(); el.style.setProperty("--mx",(e.clientX-r.left)+"px"); el.style.setProperty("--my",(e.clientY-r.top)+"px"); }));
+
+/* ---------- scramble headings + reveal + count-up ---------- */
+const GLYPHS = "!<>-_\\/[]{}=+*^?#01";
+function scramble(el){
+  if (reduce || el._done) return; el._done = true;
+  const html = el.innerHTML, text = el.textContent; let f = 0; const total = 24;
+  const tick = () => { f++; el.textContent = text.split("").map((ch,i) => ch===" " ? " " : (i < text.length*f/total ? ch : GLYPHS[Math.floor(Math.random()*GLYPHS.length)])).join("");
+    if (f < total) requestAnimationFrame(tick); else el.innerHTML = html; };
+  tick();
+}
+const io = new IntersectionObserver(entries => entries.forEach(e => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add("in");
+  e.target.querySelectorAll("[data-scramble]").forEach(scramble);
+  e.target.querySelectorAll("[data-count]").forEach(el => {
+    const end=+el.dataset.count, t0=performance.now(), dur=reduce?0:1200;
+    const step=t=>{ const p=dur?Math.min(1,(t-t0)/dur):1; el.textContent=Math.round(end*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  });
+  if (e.target.id === "demo") demo.autoplay();
+  io.unobserve(e.target);
+}), {threshold:.18});
+$$(".reveal").forEach(el => io.observe(el));
+
+/* ---------- autoscaling demo ---------- */
+const demo = (() => {
+  const PODS_PER_NODE = 4, RPS_PER_POD = 150, NODE_COST = 0.192; // ~m6i.xlarge on-demand
+  let rps = 120, nodes = [{id:1, ready:true}], pods = 2, nextId = 2, busy = false, played = false;
+  const box = $("#events");
+  const ev = (cls, msg) => { const d=document.createElement("div"); d.className=cls; d.textContent=msg; box.prepend(d); while(box.children.length>9) box.lastChild.remove(); };
+  function draw(){
+    const live = nodes.filter(n=>!n.bye), ready = live.filter(n=>n.ready).length, running = Math.min(pods, ready*PODS_PER_NODE), pending = pods - running;
+    // Update node boxes in place so only newly added nodes play the pop-in animation.
+    const wrap = $("#nodes");
+    [...wrap.children].forEach(el => { if (!nodes.some(n => n.id === +el.dataset.id)) el.remove(); });
+    let placed = 0, waiting = pending;
+    for (const n of nodes){
+      let el = wrap.querySelector(`[data-id="${n.id}"]`);
+      if (!el){
+        el = document.createElement("div"); el.dataset.id = n.id;
+        el.innerHTML = `<h4>node-${n.id}<b></b></h4><div class="pods">${'<i class="pod"></i>'.repeat(PODS_PER_NODE)}</div>`;
+        wrap.appendChild(el);
+      }
+      el.className = `node ${n.ready ? "" : "prov"} ${n.bye ? "bye" : ""}`;
+      el.querySelector("b").textContent = n.bye ? "Draining" : n.ready ? "Ready" : "Provisioning";
+      el.querySelectorAll(".pod").forEach(pod => {
+        let cls = "pod";
+        if (n.ready && !n.bye && placed < running){ placed++; cls = "pod on"; }
+        else if (!n.ready && waiting > 0){ waiting--; cls = "pod pend"; }
+        if (pod.className !== cls) pod.className = cls;
+      });
+    }
+    $("#kRps").textContent = Math.round(rps).toLocaleString("en");
+    $("#kPods").innerHTML = pods + (pending>0 ? ` <small>+${pending} pending</small>` : "");
+    $("#kNodes").textContent = live.length;
+    $("#kCost").textContent = (live.length*NODE_COST).toFixed(2);
+    $("#gauge").style.width = Math.max(6, Math.min(100, rps/1800*100))+"%";
+  }
+  async function reconcile(){
+    const want = Math.max(2, Math.ceil(rps/RPS_PER_POD));
+    if (want !== pods){ ev(want>pods?"i":"n", `KEDA  deployment/api scaled ${pods} → ${want} replicas`); pods = want; draw(); }
+    const need = Math.ceil(pods/PODS_PER_NODE), live = nodes.filter(n=>!n.bye);
+    if (need > live.length){
+      for (let k=0; k<need-live.length; k++){ const n={id:nextId++, ready:false}; nodes.push(n); ev("w", `Karpenter  launching node-${n.id} (m6i.xlarge)`); }
+      draw(); await sleep(reduce?0:1300);
+      nodes.forEach(n => { if(!n.ready){ n.ready=true; ev("n", `node-${n.id} Ready · pending pods scheduled`); } }); draw();
+    } else if (need < live.length){
+      live.slice(need).forEach(n => { n.bye=true; ev("w", `Karpenter  consolidation: node-${n.id} terminated`); }); draw();
+      await sleep(reduce?0:500); nodes = nodes.filter(n=>!n.bye); draw();
+    }
+  }
+  async function ramp(to, ms){
+    const from=rps, t0=performance.now();
+    while(true){ const p=ms?Math.min(1,(performance.now()-t0)/ms):1; rps=from+(to-from)*p; draw(); await reconcile(); if(p>=1) break; await sleep(350); }
+  }
+  async function spike(){ if(busy) return; busy=true; $("#spike").disabled=true; ev("w", "Alert  traffic ×15 · p95 latency rising");
+    await ramp(1800, reduce?0:3200); ev("n", "SLO  p95 latency back under 200ms"); $("#calm").disabled=false; busy=false; }
+  async function calm(){ if(busy) return; busy=true; $("#calm").disabled=true; ev("i", "Traffic back to baseline"); await ramp(120, reduce?0:2600);
+    ev("n", `Idle capacity removed · back to $${NODE_COST.toFixed(2)}/h`); $("#spike").disabled=false; busy=false; }
+  $("#spike").onclick = spike; $("#calm").onclick = calm;
+  ev("i", "cluster ready · 1 node · 2 pods"); draw();
+  return { autoplay(){ if(played||reduce) return; played=true; setTimeout(async()=>{ await spike(); await sleep(1400); await calm(); }, 700); } };
+})();
+
+/* ---------- interactive terminal ---------- */
+(() => {
+  const out = $("#termOut"), body = $("#termBody"), inWrap = $("#termIn"), input = $("#termInput");
+  const P = '<span class="t-p">➜</span> <span class="t-m">~</span> ';
+  const pad = (s,n) => s + " ".repeat(Math.max(1, n - s.length));
+  const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+  const print = html => { out.insertAdjacentHTML("beforeend", html + "\n"); body.scrollTop = body.scrollHeight; };
+  const describe = [
+    `<span class="t-k">${pad("Name:",13)}</span><span class="t-v">Abhimanyu Prajapati</span>`,
+    `<span class="t-k">${pad("Role:",13)}</span><span class="t-v">Lead DevOps / Platform Engineer</span>`,
+    `<span class="t-k">${pad("Experience:",13)}</span><span class="t-v">7y</span>`,
+    `<span class="t-k">${pad("Location:",13)}</span><span class="t-v">Bengaluru, IN  →  relocating</span>`,
+    `<span class="t-k">${pad("Status:",13)}</span><span class="t-g">Ready</span>  (open to offers)`,
+    `<span class="t-k">Specialties:</span>`,
+    `  <span class="t-m">${pad("kubernetes-platforms",22)}</span><span class="t-d">EKS · Argo CD · Istio</span>`,
+    `  <span class="t-m">${pad("mlops-gpu",22)}</span><span class="t-d">Kubeflow · Ray · SageMaker</span>`,
+    `  <span class="t-m">${pad("finops",22)}</span><span class="t-d">Karpenter · KEDA</span>`,
+    `<span class="t-k">Events:</span>`,
+    `  <span class="t-g">Normal</span>  <span class="t-y">${pad("CostReduced",12)}</span>GPU spend -40%`,
+    `  <span class="t-g">Normal</span>  <span class="t-y">${pad("Scaled",12)}</span>EKS cost -30%`,
+    `  <span class="t-g">Normal</span>  <span class="t-y">${pad("Shipped",12)}</span>deploys 50% faster`,
+  ];
+  const cmds = {
+    help: () => [`<span class="t-y">available commands</span>`,
+      ...[["whoami","who is this"],["skills","what I work with"],["experience","where I've worked"],["kubectl get pods","what's running"],
+          ["kubectl top cost","money saved"],["relocate","where I can go"],["contact","say hi"],["demo","run the autoscaling demo"],["clear","clean up"],["sudo hire-me","🎉"]]
+        .map(([c,d]) => `  <span class="t-m">${pad(c,20)}</span><span class="t-d">${d}</span>`)],
+    whoami: () => [`Platform engineer who makes deploys boring, clusters reliable and cloud bills smaller.`, `7 years · AWS · GCP · on-prem GPU · Bengaluru → anywhere.`],
+    skills: () => [["orchestration","Kubernetes, EKS, ECS, RKE2, Helm, Karpenter, KEDA"],["cloud/iac","AWS, GCP, Azure, Terraform, Ansible, Chef"],
+      ["delivery","Argo CD, GitOps, GitLab CI, Jenkins, Harness, Istio"],["ml/ai","Kubeflow, MLflow, SageMaker, Ray, Airflow, Dagster"],
+      ["observability","Prometheus, Grafana, SigNoz, New Relic, CloudWatch, ELK"]].map(([k,v]) => `<span class="t-k">${pad(k,15)}</span>${v}`),
+    experience: () => [["2025–now","AiDash","Lead Software Engineer, Platform"],["2025","Sanas.ai","Senior Platform Engineer"],["2023–25","Zoomcar","Senior DevOps Engineer"],
+      ["2022–23","Observe.ai","Senior DevOps Engineer"],["2019–21","TO THE NEW","DevOps Engineer"]].map(([w,c,r]) => `<span class="t-d">${pad(w,11)}</span><span class="t-m">${pad(c,12)}</span>${r}`),
+    "kubectl get pods": () => [`<span class="t-d">${pad("NAME",24)}${pad("READY",7)}${pad("STATUS",9)}${pad("RESTARTS",10)}AGE</span>`,
+      ...["platform-engineering","mlops-gpu-infra","finops-cost-control","sre-on-call","coffee-to-yaml"].map((n,i) => `${pad(n,24)}${pad("1/1",7)}<span class="t-g">${pad("Running",9)}</span>${pad(i===4?"∞":"0",10)}7y`)],
+    "kubectl top cost": () => [`<span class="t-d">${pad("WORKLOAD",24)}SAVED</span>`, `${pad("ml-training (on-prem)",24)}<span class="t-g">-40%</span>`,
+      `${pad("eks autoscaling",24)}<span class="t-g">-30%</span>`, `${pad("observability",24)}<span class="t-g">New Relic → SigNoz</span>`, `${pad("eks extended support",24)}<span class="t-g">fees removed</span>`],
+    relocate: () => [`Open to: <span class="t-m">UK · EU · North America · APAC · Middle East</span>`, `Roles:   Senior / Staff / Lead · Platform · DevOps · SRE · MLOps · FinOps`],
+    contact: () => [`email    <a href="mailto:${EMAIL}">${EMAIL}</a>`, `linkedin <a href="${LINKEDIN}" target="_blank" rel="noopener">abhimanyu-prajapati96</a>`],
+    demo: () => { document.getElementById("demo").scrollIntoView({behavior: reduce ? "auto" : "smooth"}); setTimeout(() => $("#spike").click(), 800); return ["→ scrolling to the live demo…"]; },
+    "sudo hire-me": () => { confetti(); return [`<span class="t-g">[sudo] permission granted.</span>`, `Excellent decision → <a href="mailto:${EMAIL}">${EMAIL}</a>`]; },
+    "rm -rf /": () => [`<span class="t-r">nice try.</span> the PodDisruptionBudget says no.`],
+    exit: () => [`there is no exit. only uptime. ☕`],
+    ls: () => [`<span class="t-m">impact/  demo/  build/  experience/  skills/  contact/</span>`],
+  };
+  const aliases = {"kubectl get po":"kubectl get pods","hire-me":"sudo hire-me","hire me":"sudo hire-me","sudo hire me":"sudo hire-me",
+                   "about":"whoami","cat about.md":"whoami","stack":"skills","jobs":"experience","?":"help","man":"help"};
+  const hist = []; let hi = 0;
+  function run(raw){
+    const c = raw.trim().replace(/\s+/g," "), key = aliases[c.toLowerCase()] || c.toLowerCase();
+    print(P + `<span class="t-c">${esc(c)}</span>`);
+    if (!c) return;
+    hist.push(c); hi = hist.length;
+    if (key === "clear"){ out.innerHTML = ""; return; }
+    const fn = cmds[key];
+    (fn ? fn() : [`zsh: command not found: ${esc(c)} · try <span class="t-m">help</span>`]).forEach(print);
+  }
+  input.addEventListener("keydown", e => {
+    if (e.key === "Enter"){ run(input.value); input.value = ""; }
+    else if (e.key === "ArrowUp" && hist.length){ hi = Math.max(0, hi-1); input.value = hist[hi]; e.preventDefault(); }
+    else if (e.key === "ArrowDown" && hist.length){ hi = Math.min(hist.length, hi+1); input.value = hist[hi] || ""; e.preventDefault(); }
+    else if (e.key === "Tab"){ e.preventDefault(); const v = input.value.toLowerCase(); const m = v && Object.keys(cmds).find(k => k.startsWith(v)); if (m) input.value = m; }
+  });
+  $("#term").addEventListener("click", e => { if (!e.target.closest("a")) input.focus({preventScroll:true}); });
+  (async () => {
+    const cmd = "kubectl describe engineer abhimanyu";
+    if (reduce){ out.innerHTML = P + `<span class="t-c">${cmd}</span>\n` + describe.join("\n") + "\n"; }
+    else {
+      let typed = ""; for (const ch of cmd){ typed += ch; out.innerHTML = P + `<span class="t-c">${typed}</span><span class="cursor"></span>`; await sleep(36 + Math.random()*40); }
+      out.innerHTML = P + `<span class="t-c">${cmd}</span>\n`; await sleep(300);
+      for (const l of describe){ print(l); await sleep(70); }
+    }
+    print(`\n<span class="hint">↳ this terminal is live · type </span><span class="t-m">help</span><span class="hint"> and press enter</span>`);
+    inWrap.hidden = false; body.scrollTop = body.scrollHeight;
+  })();
+})();
+
+/* ---------- command palette ---------- */
+(() => {
+  const pal = $("#pal"), palIn = $("#palIn"), list = $("#palList");
+  const go = id => () => document.getElementById(id).scrollIntoView({behavior: reduce ? "auto" : "smooth"});
+  const items = [
+    ["Impact", "section", go("impact")], ["Live autoscaling demo", "section", go("demo")], ["What I build", "section", go("build")],
+    ["Experience", "section", go("experience")], ["Stack", "section", go("skills")], ["Contact", "section", go("contact")],
+    ["Copy email address", "action", copyEmail], ["Send an email", "action", () => location.href = "mailto:" + EMAIL],
+    ["Open LinkedIn", "link", () => open(LINKEDIN, "_blank", "noopener")],
+    ["Run the autoscaling demo", "action", () => { go("demo")(); setTimeout(() => $("#spike").click(), 800); }],
+    ["Celebrate 🎉", "fun", () => confetti()],
+  ];
+  let shown = items, sel = 0;
+  const render = () => { list.innerHTML = shown.map((it,i) => `<div class="pal-item ${i===sel?"sel":""}" data-i="${i}">${it[0]}<span>${it[1]}</span></div>`).join("") || '<div class="pal-item">No matches</div>'; };
+  const openPal = () => { pal.classList.add("open"); palIn.value = ""; shown = items; sel = 0; render(); palIn.focus(); };
+  const close = () => pal.classList.remove("open");
+  const choose = i => { const it = shown[i]; if (!it) return; close(); it[2](); };
+  addEventListener("keydown", e => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k"){ e.preventDefault(); pal.classList.contains("open") ? close() : openPal(); }
+    else if (e.key === "Escape") close();
+  });
+  $("#palBtn").onclick = openPal;
+  pal.addEventListener("click", e => { if (e.target === pal) return close(); const it = e.target.closest(".pal-item"); if (it && it.dataset.i) choose(+it.dataset.i); });
+  palIn.addEventListener("input", () => { const q = palIn.value.toLowerCase(); shown = items.filter(it => it[0].toLowerCase().includes(q)); sel = 0; render(); });
+  palIn.addEventListener("keydown", e => {
+    if (e.key === "ArrowDown"){ sel = Math.min(shown.length-1, sel+1); render(); e.preventDefault(); }
+    else if (e.key === "ArrowUp"){ sel = Math.max(0, sel-1); render(); e.preventDefault(); }
+    else if (e.key === "Enter") choose(sel);
+  });
+})();
+
+/* ---------- confetti ---------- */
+function confetti(){
+  if (reduce) return toast("🎉");
+  const c = $("#confetti"), ctx = c.getContext("2d"); c.width = innerWidth; c.height = innerHeight;
+  const cols = ["#6d8bff","#22d3ee","#4ade80","#fbbf24","#f472b6"];
+  const ps = Array.from({length:160}, () => ({x:innerWidth/2, y:innerHeight*0.35, vx:(Math.random()-.5)*16, vy:Math.random()*-14-4, s:Math.random()*6+4, r:Math.random()*6, vr:(Math.random()-.5)*.3, c:cols[Math.floor(Math.random()*cols.length)]}));
+  let t = 0;
+  (function f(){ ctx.clearRect(0,0,c.width,c.height); t++;
+    for (const p of ps){ p.vy += .38; p.vx *= .99; p.x += p.vx; p.y += p.vy; p.r += p.vr; ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r); ctx.fillStyle = p.c; ctx.fillRect(-p.s/2,-p.s/4,p.s,p.s/2); ctx.restore(); }
+    if (t < 170) requestAnimationFrame(f); else ctx.clearRect(0,0,c.width,c.height); })();
+}
+</script>
+</body>
+</html>
